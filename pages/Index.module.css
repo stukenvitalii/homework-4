@@ -1,0 +1,27 @@
+.header {
+    background-color: whitesmoke;
+}
+.container {
+    display: flex;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    background-color: whitesmoke;
+    /* max-width: 1200px; */
+}
+.block {
+    max-width: 600px;
+    margin: 10px;
+    /* position: relative; */
+}
+.picture {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.title_ {
+    padding: 0;
+    min-height: 10px;
+    margin: 0;
+}
