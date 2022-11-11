@@ -20,8 +20,23 @@
     max-height: 100%;
 }
 
-.title_ {
-    padding: 0;
-    min-height: 10px;
-    margin: 0;
+.form {
+    display: flex;
 }
+
+.input {
+    margin: 0 5px;
+    padding: 4px 10px;
+    transition: 0.25s linear;
+    width: 200px;
+}
+
+.input:hover {
+    box-shadow: none;
+    border-color: black;
+}
+
+.input:focus::-webkit-input-placeholder {color: transparent}
+.input:focus::-moz-placeholder          {color: transparent}
+.input:focus:-moz-placeholder           {color: transparent}
+.input:focus:-ms-input-placeholder      {color: transparent}

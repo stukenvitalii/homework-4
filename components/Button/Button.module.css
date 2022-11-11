@@ -1,14 +1,14 @@
 .button {
-    background-color: transparent;
-    padding: 10px 8px;
-    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.25s linear;
-}   
+  margin: 0 1px;
+  background-color: transparent;
+  padding: 5px 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.25s linear;
+}
 
 .button:hover {
-    box-shadow: none;
-    border-color: black;
+  box-shadow: none;
+  border-color: black;
 }
