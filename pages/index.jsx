@@ -4,7 +4,7 @@ import { Picture } from "/components/Picture/Picture";
 import css from "./Index.module.css";
 
 export default function IndexPage() {
-  let [content, setContent] = useState([]);
+  let [content, setContent] = useState(null);
   let [page, setPage] = useState(0);
   let [value, setValue] = useState("");
   let [description, setDescription] = useState("");
