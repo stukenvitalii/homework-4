@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "/components/Button/Button";
 import { Picture } from "/components/Picture/Picture";
 import css from "./Index.module.css";
+import Head from "next/head";
 
 export default function IndexPage() {
   let [content, setContent] = useState(null);
@@ -28,9 +29,12 @@ export default function IndexPage() {
       .then((obj) => setContent(obj));
   }, []);
 
-  console.log(content);
+  // console.log(content);
   return (
     <div className={css.header}>
+    <Head>
+      <title>Gallery</title>
+    </Head>
       <form className={css.form} onSubmit={handleClick}>
         <Button type="submit">Add new picture</Button>
         <input

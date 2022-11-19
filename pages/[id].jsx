@@ -3,21 +3,23 @@ import React from "react";
 import Head from "next/head";
 import { Picture } from "/components/Picture/Picture";
 
-const BlogItem = ({ data }) => {
+const GalleryItem = ({ data }) => {
   const router = useRouter();
 
   if (router.isFallback) return <h1>Loading...</h1>;
   return (
+
     <div>
       <Head>
         <title>Picture</title>
+        <link rel="shortcut icon" href="favicon.png" type="image/png"/>
       </Head>
       <Picture src={data.url} alt={data.title} children={data.title}></Picture>
     </div>
   );
 };
 
-export default BlogItem;
+export default GalleryItem;
 
 export async function getStaticProps(context) {
   const photo = await fetch(
