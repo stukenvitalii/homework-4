@@ -9,7 +9,6 @@ export default function IndexPage() {
   let [value, setValue] = useState("");
   let [description, setDescription] = useState("");
 
-  
   function handleClick(e) {
     if (!value) {
       return;
@@ -62,7 +61,7 @@ export default function IndexPage() {
         </Button>
       </form>
       <div className={css.container}>
-        {content.slice(page * 10, (page + 1) * 10).map((el, i) => (
+        {content && content.slice(page * 10, (page + 1) * 10).map((el, i) => (
           <div className={css.block}>
             <div className={css.picture}>
               <Picture
