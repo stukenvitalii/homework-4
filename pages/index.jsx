@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "/components/Button/Button";
 import { Picture } from "/components/Picture/Picture";
 import css from "./Index.module.css";
+import Head from "next/head";
 
 export default function IndexPage() {
   let [content, setContent] = useState(null);
@@ -9,7 +10,6 @@ export default function IndexPage() {
   let [value, setValue] = useState("");
   let [description, setDescription] = useState("");
 
-  
   function handleClick(e) {
     if (!value) {
       return;
@@ -29,9 +29,12 @@ export default function IndexPage() {
       .then((obj) => setContent(obj));
   }, []);
 
-  console.log(content);
+  // console.log(content);
   return (
     <div className={css.header}>
+    <Head>
+      <title>Gallery</title>
+    </Head>
       <form className={css.form} onSubmit={handleClick}>
         <Button type="submit">Add new picture</Button>
         <input
@@ -50,7 +53,6 @@ export default function IndexPage() {
           value={description}
           onChange={(e) => {
             setDescription(e.target.value);
-            // setDescription(e.target.description.split(",")[1]);
           }}
         />
         <Button type="button" onClick={() => setPage((p) => p + 1)}>
@@ -62,8 +64,7 @@ export default function IndexPage() {
         </Button>
       </form>
       <div className={css.container}>
-        {content.slice(page * 10, (page + 1) * 10).map((el, i) => (
-          <div className={css.block}>
+        {content && content.slice(page * 10, (page + 1) * 10).map((el, i) => (
             <div className={css.picture}>
               <Picture
                 key={i}
@@ -72,7 +73,6 @@ export default function IndexPage() {
                 children={el.title}
               ></Picture>
             </div>
-          </div>
         ))}
       </div>
     </div>
