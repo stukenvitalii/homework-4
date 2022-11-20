@@ -53,7 +53,6 @@ export default function IndexPage() {
           value={description}
           onChange={(e) => {
             setDescription(e.target.value);
-            // setDescription(e.target.description.split(",")[1]);
           }}
         />
         <Button type="button" onClick={() => setPage((p) => p + 1)}>
@@ -66,7 +65,6 @@ export default function IndexPage() {
       </form>
       <div className={css.container}>
         {content && content.slice(page * 10, (page + 1) * 10).map((el, i) => (
-          <div className={css.block}>
             <div className={css.picture}>
               <Picture
                 key={i}
@@ -75,7 +73,6 @@ export default function IndexPage() {
                 children={el.title}
               ></Picture>
             </div>
-          </div>
         ))}
       </div>
     </div>
